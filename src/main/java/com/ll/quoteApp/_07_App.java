@@ -2,10 +2,10 @@ package com.ll.quoteApp;
 
 import java.util.Scanner;
 
-public class _08_Trial {
+public class _07_App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Quote5 quotes[] = new Quote5[100];
+        Quote4 quotes[] = new Quote4[100];
         int quoteNumber = 0;
         int total = 0;
 
@@ -15,7 +15,7 @@ public class _08_Trial {
             String commend = sc.nextLine();
             if (commend.equals("종료")) break;
             else if (commend.equals("등록")) {
-                Quote5 quote = new Quote5();
+                Quote4 quote = new Quote4();
                 quotes[quoteNumber] = quote;
                 System.out.print("명언 : ");
                 quotes[quoteNumber].verse = sc.nextLine();
@@ -28,27 +28,9 @@ public class _08_Trial {
                 try {
                     if (quotes[i - 1].verse != null) {
                         try {
-                            quotes[i - 1] = new Quote5();
+                            quotes[i - 1] = new Quote4();
                             System.out.println(i + "번 명언이 삭제되었습니다.");
                             total--;
-                        } catch (Exception e) {
-                            System.out.println("잘못된 입력입니다.");
-                        }
-                    } else System.out.println(i + "번 명언은 존재하지 않습니다.");
-                } catch (Exception e) {
-                    System.out.println(i + "번 명언은 존재하지 않습니다.");
-                }
-            } else if (commend.startsWith("수정?id=")) {
-                int i = Integer.parseInt(commend.substring(6).trim());
-                try {
-                    if (quotes[i - 1].verse != null) {
-                        try {
-                            System.out.println("명언(기존) : " + quotes[i - 1].verse);
-                            System.out.print("명언 : ");
-                            quotes[i - 1].verse = sc.nextLine();
-                            System.out.println("작가(기존) : " + quotes[i - 1].writer);
-                            System.out.print("작가 : ");
-                            quotes[i - 1].writer = sc.nextLine();
                         } catch (Exception e) {
                             System.out.println("잘못된 입력입니다.");
                         }
@@ -73,8 +55,7 @@ public class _08_Trial {
     }
 }
 
-class Quote5 {
+class Quote4 {
     String verse;
     String writer;
 }
-

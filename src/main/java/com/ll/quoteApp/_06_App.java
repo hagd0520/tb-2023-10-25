@@ -2,7 +2,7 @@ package com.ll.quoteApp;
 
 import java.util.Scanner;
 
-public class _06_Trial {
+public class _06_App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Quote3 quotes[] = new Quote3[100];
